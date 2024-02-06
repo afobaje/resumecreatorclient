@@ -1,0 +1,73 @@
+
+
+.hamburger {
+    display: flex;
+  gap: 0.2em;
+  flex-direction: column;
+  span {
+    width: 20px;
+    height: 2px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 30px;
+  }
+}
+
+.mobile-menu {
+  width: min(300px, 80vw);
+ 
+}
+
+.close {
+  flex-direction: column;
+  gap: 0.3em;
+  display: flex;
+  margin-top: 0.5rem;
+
+  span{
+    background-color: black;
+    border-radius: 30px;
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+  }
+
+  span:nth-of-type(1) {
+    rotate: 45deg;
+    transform-origin: center;
+    transform: translateY(2px);
+  }
+  span:nth-of-type(2) {
+    transform-origin: left center;
+    transform: translateY(3px);
+    rotate: -45deg;
+  }
+}
+
+
+
+.show{
+animation: showNav 500ms linear;
+}
+.hide{
+  animation: hideNav 500ms linear;
+}
+
+@keyframes showNav {
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform:translateX(100%);
+  }
+}
+
+
+@keyframes hideNav {
+  0%{
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(0%);
+  }
+}
