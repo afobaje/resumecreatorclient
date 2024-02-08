@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <nav className='py-5 '>
       <div className='flex items-center max-w-[1120px] mx-auto px-8'>
-        <Link href='/' className='mr-20'>Resume</Link>
+        <Link href='/' className='mr-20'>Empluy</Link>
         <div className="hidden lg:flex flex-1">
           <ul className='flex gap-6'>
             <li>Explore</li>

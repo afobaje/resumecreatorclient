@@ -1,4 +1,6 @@
 import React from 'react'
+import Benefits from './components/Benefits'
+import Incentives from './components/Incentives'
 
 export default function Home() {
   return (
@@ -21,18 +23,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="info-sec mt-5 min-h-[100svh] ">
-        <div className="l-container">
-          <div className="info-content">
-            <ul>
-              <li>Resume unique links</li>
-              <li>Edit your resume on the fly</li>
-              <li>Get an offline copy</li>
-              <li>ATS compliant resume</li>
-            </ul>
-          </div>
+      <section className="info-sec py-20 mt-5 bg-black min-h-[100svh] ">
+        <div className="l-container ">
+         <div className='py-20 flex text-white md:max-w-[66.25vw] flex-col gap-10'>
+          <p className='text-xl md:text-2xl'>A dynamic and powerful way of announcing yourself in the room</p>
+          <p className='text-4xl md:text-5xl leading-snug'>We have easy to use APIs to make automatic integration easy</p>
+         </div>
+          <Incentives/>
         </div>
       </section>
+      <section className="flex min-h-[300vh]"></section>
     </div>
   )
 }
