@@ -62,7 +62,7 @@ export default function Incentives() {
                 </div>
             </div>
             <div className="edit bg-white  rounded-3xl grid md:grid-cols-2 h-[100lvh]">
-                <div className='grid place-content-center p-5 md:p-20 rounded-tl-3xl rounded-tr-3xl bg-black md:rounded-tl-3xl md:rounded-bl-3xl'>
+                <div className='grid place-content-center p-5 md:p-20 md:rounded-tr-none rounded-tl-3xl rounded-tr-3xl bg-black md:rounded-tl-3xl md:rounded-bl-3xl'>
                     <span className='text-white font-bold leading-snug text-3xl md:text-4xl'>Edit your resume on the fly</span>
                 </div>
                 <div className='grid place-content-center p-5 md:p-20'>
@@ -74,7 +74,7 @@ export default function Incentives() {
                 <div className='bg-black md:rounded-tr-3xl md:rounded-br-3xl p-20 grid place-content-center'><span className='text-white text-lg md:text-3xl leading-snug '>Are you in a remote area with poor internet access? Get a local copy to view and send to prospects</span></div>
             </div>
             <div className="ats rounded-3xl bg-white grid md:grid-cols-2 h-[100lvh]">
-                <div className='bg-black rounded-tr-3xl rounded-tl-3xl md:rounded-tl-3xl md:rounded-bl-3xl p-20 grid place-content-center '><span className='text-4xl text-white font-bold'>ATS compliant resume</span></div>
+                <div className='bg-black rounded-tr-3xl md:rounded-tr-none rounded-tl-3xl md:rounded-bl-3xl p-20 grid place-content-center '><span className='text-4xl text-white font-bold'>ATS compliant resume</span></div>
                 <div className='p-5 md:p-20 grid place-content-center'><span className='text-3xl'>Our system is optimized to pass every ATS breakpoint and give you your best chances</span></div>
             </div>
         </div>
