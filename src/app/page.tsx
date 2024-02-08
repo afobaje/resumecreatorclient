@@ -1,5 +1,4 @@
 import React from 'react'
-import Benefits from './components/Benefits'
 import Incentives from './components/Incentives'
 
 export default function Home() {
