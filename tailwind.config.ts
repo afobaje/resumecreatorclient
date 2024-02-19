@@ -10,6 +10,7 @@ const config = {
 	],
   prefix: "",
   theme: {
+  
     container: {
       center: true,
       padding: "2rem",
@@ -19,6 +20,8 @@ const config = {
     },
     extend: {
       colors: {
+        black:'#36454f',
+        gainsborowhite:'#dcdcdc',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

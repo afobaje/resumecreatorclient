@@ -1,7 +1,5 @@
-
-
 .hamburger {
-    display: flex;
+  display: flex;
   gap: 0.2em;
   flex-direction: column;
   span {
@@ -15,7 +13,6 @@
 
 .mobile-menu {
   width: min(300px, 80vw);
- 
 }
 
 .close {
@@ -24,7 +21,7 @@
   display: flex;
   margin-top: 0.5rem;
 
-  span{
+  span {
     background-color: black;
     border-radius: 30px;
     display: inline-block;
@@ -34,40 +31,39 @@
 
   span:nth-of-type(1) {
     rotate: 45deg;
+    /* transfo */
     transform-origin: center;
     transform: translateY(2px);
   }
   span:nth-of-type(2) {
     transform-origin: left center;
     transform: translateY(3px);
+    /* transform:translate(-50%,-50%) rotate(-45deg); */
     rotate: -45deg;
   }
 }
 
-
-
-.show{
-animation: showNav 500ms linear;
+.show {
+  animation: showNav 500ms linear;
 }
-.hide{
+.hide {
   animation: hideNav 500ms linear;
 }
 
 @keyframes showNav {
-  0%{
+  0% {
     transform: translateX(0%);
   }
-  100%{
-    transform:translateX(100%);
+  100% {
+    transform: translateX(100%);
   }
 }
 
-
 @keyframes hideNav {
-  0%{
-    transform:translateX(100%);
+  0% {
+    transform: translateX(100%);
   }
-  100%{
-    transform:translateX(0%);
+  100% {
+    transform: translateX(0%);
   }
 }

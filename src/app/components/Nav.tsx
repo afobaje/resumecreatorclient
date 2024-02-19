@@ -20,11 +20,12 @@ export default function Nav() {
         <Link href='/' className='mr-20'>Empluy</Link>
         <div className="hidden lg:flex flex-1">
           <ul className='flex gap-6'>
-            <li>Explore</li>
+            <li><Link href='/explore'>Explore</Link></li>
             <li>Jobs</li>
           </ul>
           <div className='ml-auto'>
-            <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link>
+            <Link href='/login' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
+            {/* <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link> */}
           </div>
         </div>
         <div className="lg:hidden justify-end flex flex-1">
@@ -36,7 +37,7 @@ export default function Nav() {
         </div>
         <div className={`mobile-menu fixed h-full px-5 bg-white z-10 top-0 right-0 ${displayNav ? 'flex' : 'hidden'} flex-col `}>
           <div className="logo flex justify-between -mt-5 py-10 px-3">
-            <span>Resume</span>
+            <span>Empluy</span>
             <button onClick={closeNav} className="close">
               <span className="close-item"></span>
               <span className="close-item"></span>
@@ -46,7 +47,8 @@ export default function Nav() {
             <li>Explore</li>
             <li>Jobs</li>
             <li className='mt-10'>
-              <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link>
+              <Link href='/login' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
+              {/* <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link> */}
             </li>
           </ul>
         </div>
