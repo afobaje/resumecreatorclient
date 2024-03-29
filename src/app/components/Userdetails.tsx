@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useContext, useEffect, useState } from 'react'
 
 
@@ -16,7 +17,8 @@ export default function Userdetails({gen}:{gen:any}) {
   return (
     <div className='flex  items-center justify-center gap-4'>
       <div className="img-wrapper size-14">
-        <img className='object-contain bg-gray-400 rounded-full size-full' alt='user profile image' src={gen?.image ?? ''} />
+        <Image className='object-contain bg-gray-400 rounded-full size-full' alt='user profile image' src={gen?.image ?? ''}  />
+        {/* <img className='object-contain bg-gray-400 rounded-full size-full' alt='user profile image' src={gen?.image ?? ''} /> */}
       </div>
       <div className="username flex flex-col gap-1">
         <span>{gen?.name}</span>

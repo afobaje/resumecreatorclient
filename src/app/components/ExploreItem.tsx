@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -10,7 +11,8 @@ export default function ExploreItem({Item}:{Item:any}) {
       <div className=' text-sm [-webkit-line-clamp:4] truncate '>{Item?.user?.about}</div>
       <div className='flex gap-3 items-center '>
         <span className='size-10'>
-          <img src={Item?.user?.image} className='object-cover bg-gray-400 w-full h-full rounded-full' alt="User profile image" />
+        <Image src={Item?.user?.image} className='object-cover bg-gray-400 w-full h-full rounded-full' alt="User profile image" />
+          {/* <img src={Item?.user?.image} className='object-cover bg-gray-400 w-full h-full rounded-full' alt="User profile image" /> */}
         </span>
         <span>{Item?.user?.name.toLowerCase()}</span>
       </div>
