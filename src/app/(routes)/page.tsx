@@ -1,9 +1,35 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Li from '@/app/components/Li'
-import Benefits from './components/Benefits'
+import Benefits from '../components/Benefits'
+import { useSession } from 'next-auth/react'
+import { useRedirect } from '../hooks/useRedirect'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
 
+  let router = useRouter()
+  const { data, status } = useSession()
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  function handleUser() {
+    console.log(status, 'we are running')
+    status === 'authenticated' ? router.push('/explore') : router.push('/api/auth/signin')
+  }
+
+  // useRedirect()
   //bg-gray-950
   return (
     <div>
@@ -18,7 +44,7 @@ export default function Home() {
 
               {/* <h1 className='font-bold  heading text-3xl md:text-5xl '>Worry not about revamping your <span className='resume'>Resume</span>, we have done the work for you</h1> */}
               <div className='mt-5 md:mt-10'>
-                <button className='rounded-3xl p-2 inline-grid place-content-center whitespace-nowrap shadow-md md:p-3 text-white bg-black'>Get Started</button>
+                <button onClick={handleUser} className='rounded-3xl p-2 inline-grid place-content-center whitespace-nowrap shadow-md md:p-3 text-white bg-black'>Get Started</button>
               </div>
             </div>
 
@@ -31,7 +57,7 @@ export default function Home() {
             <p className='text-xl md:text-2xl'>A dynamic and powerful way of announcing yourself in the room</p>
             <p className='text-4xl md:text-5xl leading-snug'>We have easy to use APIs to make automatic integration easy</p>
           </div>
-          <Benefits/>
+          <Benefits />
           {/* <Incentives /> */}
           {/* <Attempt /> */}
         </div>
@@ -50,13 +76,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='flex bg-black flex-col justify-center items-center py-10 my-10 '>
+      <section className='flex  flex-col justify-center items-center py-10 my-10 '>
         <div className="l-container">
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <div></div>
 
             <div>
-              <p className='md:text-4xl text-2xl  text-white p-5'>
+              <p className='md:text-4xl text-2xl md:text-white p-5'>
                 Don&#39;t want to share certain parts of your resume? Restrict individual access all from your profile. That easy!
               </p>
             </div>

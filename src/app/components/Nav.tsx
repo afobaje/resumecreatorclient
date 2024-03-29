@@ -1,7 +1,9 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './../css/Nav.css'
+import { signOut, useSession } from 'next-auth/react';
+import { UserContext } from '../Context/UsersProvider';
 
 export default function Nav() {
   const [displayNav, setDisplayNav] = useState(false);
@@ -14,6 +16,10 @@ export default function Nav() {
     setDisplayNav(false)
   };
 
+
+  const { OneUser } = useContext(UserContext)
+  let { data, status } = useSession()
+
   return (
     <nav className='py-5 '>
       <div className='flex items-center max-w-[1120px] mx-auto px-8'>
@@ -22,10 +28,13 @@ export default function Nav() {
           <ul className='flex gap-6'>
             <li><Link href='/explore'>Explore</Link></li>
             <li>Jobs</li>
+            {data && <li><Link href={`/${OneUser?.user?.username??''}`}>Profile</Link></li>}
           </ul>
           <div className='ml-auto'>
-            <Link href='/login' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
-            {/* <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link> */}
+            {
+              !data &&
+              <Link href='/api/auth/signin' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
+            }
           </div>
         </div>
         <div className="lg:hidden justify-end flex flex-1">
@@ -47,8 +56,11 @@ export default function Nav() {
             <li>Explore</li>
             <li>Jobs</li>
             <li className='mt-10'>
-              <Link href='/login' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
-              {/* <Link href='/login' className='text-white p-3 rounded-3xl bg-black whitespace-nowrap shadow-md'>Login or Sign up</Link> */}
+              {/* <Link href='/api/auth/signin' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link> */}
+              {
+                !data &&
+                <Link href='/api/auth/signin' className='text-white p-3 rounded-3xl  bg-gradient-to-tl from-black to-gainsborowhite whitespace-nowrap shadow-md'>Login or Sign up</Link>
+              }
             </li>
           </ul>
         </div>

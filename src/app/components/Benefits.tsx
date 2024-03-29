@@ -1,6 +1,5 @@
 'use client'
 import React, { useRef } from 'react'
-// import { LenisInstance, ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -8,7 +7,6 @@ import { useGSAP } from '@gsap/react'
 export default function Benefits() {
     gsap.registerPlugin(ScrollTrigger)
     const lenisRef = useRef<HTMLDivElement | null>(null!)
-
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -31,6 +29,7 @@ export default function Benefits() {
 
 
 
+    // console.log(process.env.NEXT_PUBLIC_CLIENTID,'test one two')
 
     return (
         <div ref={lenisRef} className='min-h-[100lvh] relative flex items-center flex-col gap-5 justify-center '>
@@ -53,11 +52,11 @@ export default function Benefits() {
                 </div>
             </div>
             <div className="offline inset-0 absolute border-black border  rounded-3xl  grid md:grid-cols-2 h-[90lvh]">
-                <div className='grid rounded-tr-3xl md:rounded-tr-none rounded-tl-3xl md:rounded-tl-3xl md:rounded-bl-3xl  bg-white place-content-center p-20'><span className=' font-bold text-3xl md:text-4xl'>Get an offline copy</span></div>
+                <div className='grid rounded-tr-3xl md:rounded-tr-none rounded-tl-3xl md:rounded-tl-3xl md:rounded-bl-3xl  bg-white place-content-center p-5 md:p-20'><span className=' font-bold text-3xl md:text-4xl'>Get an offline copy</span></div>
                 <div className='bg-black md:rounded-tr-3xl md:rounded-br-3xl p-5 md:p-20 grid place-content-center'><span className='text-white text-3xl leading-snug '>Are you in a remote area with poor internet access? Get a local copy to view and send to prospects</span></div>
             </div>
             <div className="ats inset-0 absolute border-black border  rounded-3xl  grid md:grid-cols-2 h-[90lvh]">
-                <div className='bg-black rounded-tr-3xl md:rounded-tr-none rounded-tl-3xl md:rounded-bl-3xl p-20 grid place-content-center '><span className='text-4xl text-white font-bold'>ATS compliant resume</span></div>
+                <div className='bg-black rounded-tr-3xl md:rounded-tr-none rounded-tl-3xl md:rounded-bl-3xl p-5 md:p-20 grid place-content-center '><span className='text-4xl text-white font-bold'>ATS compliant resume</span></div>
                 <div className='p-5 md:p-20 bg-white rounded-br-3xl md:rounded-bl-none rounded-bl-3xl md:rounded-tr-3xl md:rounded-br-3xl grid place-content-center'><span className='text-3xl'>Our system is optimized to pass every ATS breakpoint and give you your best chances</span></div>
             </div>
         </div>

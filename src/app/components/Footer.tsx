@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className='my-10  '>
       <div className="l-container ">
-        <div className="footer-wrapper justify-between flex-wrap md:flex-nowrap  flex flex-col md:flex-row gap-10">
-          <div className='w-3/12'>
+        <div className="footer-wrapper justify-between flex-wrap md:flex-nowrap flex flex-row gap-10">
+          <div className='md:w-3/12'>
             <div>Empluy</div>
             <p>Copyright &copy; 2024 Empluy</p>
             <p>All rights reserved</p>

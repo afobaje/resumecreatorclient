@@ -1,0 +1,6 @@
+.roles::after{
+    height: 100%;
+    width:13px;
+    position:relative;
+    color:red;
+    }
