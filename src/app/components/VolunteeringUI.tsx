@@ -5,9 +5,13 @@ import { UserContext } from '../Context/UsersProvider'
 export default function VolunteeringUI({volunteer}:{volunteer:any}) {
   
 
+  console.log(volunteer,'villiunt')
 
   
   return (
+    <>
+    {
+      volunteer&&
     <section className='flex flex-col w-full gap-5'>
       <h3 className=''>Volunteering</h3>
       {
@@ -22,6 +26,8 @@ export default function VolunteeringUI({volunteer}:{volunteer:any}) {
         </div>)
       }
     </section>
+    }
+    </>
 
   )
 }

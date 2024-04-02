@@ -13,11 +13,11 @@ type dataSession = {
     email: String
 }
 
-export const UserContext = createContext<{ isPending: boolean, error: any,OneUser:null|any, users: null | any[], data?: dataSession | any, userId?: Number }>({
+export const UserContext = createContext<{ isPending: boolean, error: any, OneUser: null | any, users: null | any[], data?: dataSession | any, userId?: Number }>({
     isPending: false,
     users: null,
     error: null,
-    OneUser:null
+    OneUser: null
 
 })
 export default function UsersProvider({ children }: { children: React.ReactNode }) {
@@ -25,15 +25,22 @@ export default function UsersProvider({ children }: { children: React.ReactNode 
 
     const { data } = useSession()
 
+
+    // const { data: userExists } = useQuery({ queryKey: ['userexist'], queryFn: async () => await userService.CHECK_IF_USER_EXISTS('ikukoyidave@gmail.com') })
+  
+
+
+
+
     const OneUser = users?.filter((val: any) => val.user.email == data?.user.email)[0]
 
-    
+
     const userId = OneUser?.id
 
 
     return (
-        <UserContext.Provider value={{ isPending, error, users, data, userId ,OneUser}}>
-            { children}
+        <UserContext.Provider value={{ isPending, error, users, data, userId, OneUser }}>
+            {children}
         </UserContext.Provider>
     )
 }

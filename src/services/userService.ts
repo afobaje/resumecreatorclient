@@ -11,6 +11,10 @@ const userService = {
         return client.get('/getallusers')
             .then(res => res.data).catch(err => console.error(err, 'couldnt fetch resource'))
     },
+    async CHECK_IF_USER_EXISTS(mail:string){
+        return client.get(`/userexists/${mail}`)
+        .then(res=>res.data).catch(err=>console.error(err))
+    },
     async GET_USER_WITH_USERNAME(username: string) {
         return client.get(`/${username}`)
             .then(res => res.data).catch(err => console.error(err))
@@ -19,8 +23,8 @@ const userService = {
         return client.post(`/projects/${id}`, projects)
             .then(res => res.data).catch(err => console.error(err))
     },
-    async UPDATE_USERNAME(id: Number, username: string) {
-        return client.post(`getusername/${id}`, username)
+    async UPDATE_USERNAME(email: string, username: string) {
+        return client.post(`getusername/${email}`, username)
             .then(res => res.data).catch(err => console.error(err))
     },
     async UPDATE_EDUCATION(id: Number, education: any) {

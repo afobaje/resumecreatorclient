@@ -39,7 +39,7 @@ export default function Profile({ userData }: { userData: any }) {
         <VolunteeringUI volunteer={userData?.volunteering} />
         <AwardsUI award={userData?.award} />
       </div>
-      <div className={`button-wrapper w-fit fixed bottom-14 left-20 ${canShowProfileButton ? 'block' : 'hidden'}`}>
+      <div className={`button-wrapper w-fit fixed bottom-14 left-5 lg:left-20 ${canShowProfileButton ? 'block' : 'hidden'}`}>
         <button onClick={handleOpen} className='px-4 py-2 font-semibold drop-shadow-lg border-2 rounded-2xl'>Edit profile</button>
       </div>
       <ResumeForm closeModal={handleClose} open={isOpen} />

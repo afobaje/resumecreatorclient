@@ -82,7 +82,7 @@ export default function Home() {
             <div></div>
 
             <div>
-              <p className='md:text-4xl text-2xl md:text-white p-5'>
+              <p className='md:text-4xl text-2xl text-white p-5'>
                 Don&#39;t want to share certain parts of your resume? Restrict individual access all from your profile. That easy!
               </p>
             </div>

@@ -20,6 +20,24 @@ export default function ResumeForm({ open, closeModal }: { open: boolean, closeM
     setToggleListShow(!toggleListShow)
   }
 
+
+
+  // alternative form of rendering content
+  function renderAppropriate(itemValue: any) {
+    const renderValue: any = {
+      'Projects': <Project />,
+      'Education': <Education />,
+      'Certification': <Certifications />,
+      'Awards': <Awards />,
+      'Work Experience': <WorkExperience />,
+      'Volunteering': <Volunteering />,
+      'General': <GeneralFormInfo />,
+      default: <GeneralFormInfo />
+
+    }
+    return renderValue[itemValue]
+  }
+
   function renderAppropriateItem(itemValue: any) {
     switch (itemValue) {
       case 'Projects':

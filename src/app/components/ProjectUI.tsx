@@ -5,10 +5,12 @@ import { ProjectDetailsType } from '../types/projectDetailsType'
 
 export default function ProjectUI({project}:{project:any}) {
     
+    console.log(project,'cjheck result')
 
-
-    // const project = userData?.project
     return (
+        <>
+        {
+            project&&
         <section className=' flex flex-col w-full gap-5'>
             <h3 className=''>Projects</h3>
             {
@@ -24,5 +26,7 @@ export default function ProjectUI({project}:{project:any}) {
             }
           
         </section>
+        }
+        </>
     )
 }

@@ -1,12 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
+import Profile from './../../../public/assets/icons8-administrator-male-80.png'
+export default function Userdetails({ gen }: { gen: any }) {
 
 
-export default function Userdetails({gen}:{gen:any}) {
-  
-  
 
   function formatLink(link: any) {
     let val = link?.split('//')
@@ -17,7 +16,11 @@ export default function Userdetails({gen}:{gen:any}) {
   return (
     <div className='flex  items-center justify-center gap-4'>
       <div className="img-wrapper size-14">
-        <Image className='object-contain bg-gray-400 rounded-full size-full' alt='user profile image' src={gen?.image ?? ''}  />
+        <Image width={0} height={0} className='object-contain aspect-square bg-gray-400 rounded-full size-full' alt='user profile image' onError={(e: any) => {
+          e.target.src = { Profile }
+          e.error = null
+
+        }} src={gen?.image ?? ''} />
         {/* <img className='object-contain bg-gray-400 rounded-full size-full' alt='user profile image' src={gen?.image ?? ''} /> */}
       </div>
       <div className="username flex flex-col gap-1">

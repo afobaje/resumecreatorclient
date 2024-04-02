@@ -2,8 +2,13 @@ import userService from "@/services/userService";
 import { AuthOptions } from "next-auth";
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
-export const authOptions:AuthOptions = {
+
+
+
+
+export const authOptions: AuthOptions = {
     // adapter: UserAdapter(),
+
     providers: [
         GoogleProvider({
             clientId: process.env.NEXT_PUBLIC_GOOGLECLIENTID as string ?? '',
@@ -49,6 +54,10 @@ export const authOptions:AuthOptions = {
 
         signIn: async (params: any) => {
             try {
+                const checkIfUserExists = await userService.CHECK_IF_USER_EXISTS(params.user.email)
+                if (checkIfUserExists) {
+                    return true;
+                }
                 const response = await userService.CREATE_USER(params.user)
                 if (response) {
                     return true;

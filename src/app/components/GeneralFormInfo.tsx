@@ -79,7 +79,7 @@ export default function GeneralFormInfo() {
                 <fieldset className='flex flex-col gap-2'>
                     <label className='text-xs pl-2'>About</label>
                     <div className='p-2 bg-slate-100 rounded-xl '>
-                        <textarea placeholder='A short bio' {...register('about', { required: true })} className='w-full outline-none bg-transparent' />
+                        <textarea placeholder='A short bio' {...register('about', { required: true,max:100 })} className='w-full outline-none bg-transparent' />
                     </div>
                 </fieldset>
             </div>
