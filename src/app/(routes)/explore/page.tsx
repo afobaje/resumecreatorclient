@@ -9,6 +9,7 @@ export default function Explore() {
   const [openUser, setOpenUser] = useState(false)
 
 
+
   useEffect(() => {
     const userDoesNotHaveUsername = OneUser && OneUser?.user?.username === undefined
     setOpenUser(userDoesNotHaveUsername)

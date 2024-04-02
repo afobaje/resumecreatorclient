@@ -11,16 +11,16 @@ export const authOptions: AuthOptions = {
 
     providers: [
         GoogleProvider({
-            clientId: process.env.NEXT_PUBLIC_GOOGLECLIENTID as string ?? '',
-            clientSecret: process.env.NEXT_PUBLIC_GOOGLECLIENTSECRET as string ?? ''
+            clientId: process.env.GOOGLECLIENTID as string ?? '',
+            clientSecret: process.env.GOOGLECLIENTSECRET as string ?? ''
         }),
         GithubProvider({
-            clientId: process.env.NEXT_PUBLIC_GITHUBCLIENTID as string,
-            clientSecret: process.env.NEXT_PUBLIC_GITHUBCLIENTSECRET as string
+            clientId: process.env.GITHUBCLIENTID as string,
+            clientSecret: process.env.GITHUBCLIENTSECRET as string
         }),
 
     ],
-    secret: process.env.NEXT_PUBLIC_NEXTAUTHSECRET as string,
+    secret: process.env.NEXTAUTHSECRET as string,
 
     callbacks: {
         redirect: async (params: any) => {
