@@ -32,7 +32,7 @@ export default function UsersProvider({ children }: { children: React.ReactNode 
 
 
 
-    const OneUser = data && users && users?.filter((val: any) => val.user.email == data?.user.email)[0]
+    const OneUser = data ? users && users?.filter((val: any) => val.user.email == data?.user.email)[0]:null
 
 
     
